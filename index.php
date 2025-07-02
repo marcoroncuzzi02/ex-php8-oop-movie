@@ -2,6 +2,8 @@
 
     require_once './Models/genre.php'; 
     require_once './Models/moovie.php'; 
+    require_once './Traits/logger.php'; 
+
 
     $azione = new Genre("Azione");
     $fantasy = new Genre("Fantasy");
@@ -19,7 +21,10 @@
     ];
     
     
-    // var_dump($batman->isItalian())
+    $batman->setNome("Il cavaliere Oscuro");
+
+    $batman->setAnno(2009);
+
 
 ?>
 
@@ -42,8 +47,8 @@
             foreach ($moovies as $moovie){
                 echo "
                 <div class='card mb-3 p-3'> 
-                    <h3>TITOLO: $moovie->nome </h3>
-                    <p>ANNO: $moovie->anno </p>
+                    <h3>TITOLO: " . $moovie->getNome() . "</h3>
+                    <p>ANNO: " . $moovie->getAnno() . "</p>
                     <p>LINGUA ORIGINALE: $moovie->lingua </p>
                     <p>DISPONIBILE IN ITALIANO: ". ($moovie->isItalian() ? 'SI' : 'NO') ."</p>
 
