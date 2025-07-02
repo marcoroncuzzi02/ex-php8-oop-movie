@@ -1,40 +1,7 @@
 <?php
 
-    class Genre{
-
-        public $nome;
-
-        function __construct($_nome){
-
-            $this->nome = $_nome;
-        }
-    }
-
-    class Moovie{
-
-        public $nome;
-        public $anno;
-        public $lingua;
-
-        function __construct($_nome,$_anno,$_lingua, Genre $genere){
-
-            $this->nome = $_nome;
-            $this->anno = $_anno;
-            $this->lingua = $_lingua;
-
-        }
-
-        public function isItalian() {
-
-            if ( $this->lingua == "ITA" ) {
-            return true;
-            } else {
-            return false;
-            }
-        }
-
-
-    }
+    require_once './Models/genre.php'; 
+    require_once './Models/moovie.php'; 
 
     $azione = new Genre("Azione");
     $fantasy = new Genre("Fantasy");
